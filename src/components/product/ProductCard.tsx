@@ -11,15 +11,16 @@ export default function ProductCard({
 }: ProductCardProps) {
   return (
     <article>
-      <div className="position-relative ratio ratio-1x1 mb-3 overflow-hidden">
-        <Image
-          src={product.image}
-          alt={product.title}
-          fill
-          className="object-fit-cover"
-        />
-      </div>
-
+      <Link href={`/products/${product.slug}`}>
+        <div className="position-relative ratio ratio-1x1 mb-3 overflow-hidden">
+          <Image
+            src={product.image}
+            alt={product.title}
+            fill
+            className="object-fit-cover"
+          />
+        </div>
+      </Link>
       <p className="text-secondary small mb-1">
         {product.category}
       </p>

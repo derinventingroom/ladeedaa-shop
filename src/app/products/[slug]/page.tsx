@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { products } from "@/data/products";
+import { getProductBySlug } from "@/data/products";
 
 type ProductPageProps = {
   params: Promise<{
@@ -13,9 +13,7 @@ export default async function ProductPage({
 }: ProductPageProps) {
   const { slug } = await params;
 
-  const product = products.find(
-    (product) => product.slug === slug
-  );
+  const product = getProductBySlug(slug);
 
   if (!product) {
     notFound();

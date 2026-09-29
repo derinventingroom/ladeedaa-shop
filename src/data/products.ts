@@ -38,3 +38,7 @@ export const products: Product[] = [
     description: "An original apparel design inspired by late nights and city lights.",
   },
 ];
+
+export function getProductBySlug(slug: string) {
+  return products.find((product) => product.slug === slug);
+}

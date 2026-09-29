@@ -1,4 +1,4 @@
-import ProductCard from "@/components/ProductCard";
+import ProductGrid from "@/components/product/ProductGrid";
 import { products } from "@/data/products";
 
 export default function ShopPage() {
@@ -11,16 +11,7 @@ export default function ShopPage() {
         </p>
       </header>
 
-      <div className="row g-4">
-        {products.map((product) => (
-          <div
-            className="col-12 col-md-6 col-lg-4"
-            key={product.id}
-          >
-            <ProductCard product={product} />
-          </div>
-        ))}
-      </div>
+      <ProductGrid products={products} />
     </main>
   );
 }
