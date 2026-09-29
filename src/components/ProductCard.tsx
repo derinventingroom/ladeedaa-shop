@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import type { Product } from "@/types/product";
 
 type ProductCardProps = {
@@ -9,10 +11,13 @@ export default function ProductCard({
 }: ProductCardProps) {
   return (
     <article>
-      <div className="bg-light ratio ratio-1x1 mb-3">
-        <div className="d-flex align-items-center justify-content-center">
-          Product Image
-        </div>
+      <div className="position-relative ratio ratio-1x1 mb-3 overflow-hidden">
+        <Image
+          src={product.image}
+          alt={product.title}
+          fill
+          className="object-fit-cover"
+        />
       </div>
 
       <p className="text-secondary small mb-1">
@@ -20,7 +25,12 @@ export default function ProductCard({
       </p>
 
       <h2 className="h5">
-        {product.title}
+        <Link
+          href={`/products/${product.slug}`}
+          className="text-dark text-decoration-none"
+        >
+          {product.title}
+        </Link>
       </h2>
 
       <p>
