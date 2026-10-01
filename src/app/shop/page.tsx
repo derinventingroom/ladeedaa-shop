@@ -1,4 +1,4 @@
-import ProductGrid from "@/components/product/ProductGrid";
+import ProductBrowser from "@/components/product/ProductBrowser";
 import { products } from "@/data/products";
 
 export default function ShopPage() {
@@ -11,7 +11,7 @@ export default function ShopPage() {
         </p>
       </header>
 
-      <ProductGrid products={products} />
+      <ProductBrowser products={products} />
     </main>
   );
 }
