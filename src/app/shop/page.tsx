@@ -1,7 +1,9 @@
 import ProductBrowser from "@/components/product/ProductBrowser";
-import { products } from "@/data/products";
+import { getProducts } from "@/data/products";
 
-export default function ShopPage() {
+export default async function ShopPage() {
+  const products = await getProducts();
+
   return (
     <main className="container py-5">
       <header className="mb-5">

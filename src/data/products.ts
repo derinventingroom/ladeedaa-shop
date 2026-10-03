@@ -42,3 +42,6 @@ export const products: Product[] = [
 export function getProductBySlug(slug: string) {
   return products.find((product) => product.slug === slug);
 }
+export async function getProducts() {
+  return products;
+}
